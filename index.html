@@ -1,259 +1,414 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pour mon Valentin ❤️</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        margin: 0;
-        padding: 20px 0;
-        display: flex;
-        justify-content: center;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
-        font-family: "Dancing Script", cursive;
-        overflow-x: hidden;
-        box-sizing: border-box;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pour mon Valentin ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+      font-family: "Dancing Script", cursive;
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+
+    .container {
+      margin: auto;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 400px;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 20px;
+      font-size: 3em;
+    }
+
+    /* Le Cœur en CSS pur */
+    .heart {
+      background-color: #ff4d6d;
+      display: inline-block;
+      height: 50px;
+      margin: 0 10px;
+      position: relative;
+      top: 0;
+      transform: rotate(-45deg);
+      width: 50px;
+      animation: heartbeat 1.2s infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: #ff4d6d;
+      border-radius: 50%;
+      height: 50px;
+      position: absolute;
+      width: 50px;
+    }
+
+    .heart:before {
+      top: -25px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 25px;
+      top: 0;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1) rotate(-45deg);
       }
 
-      .container {
-        margin: auto;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.8);
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        max-width: 90%;
-        width: 400px;
+      50% {
+        transform: scale(1.2) rotate(-45deg);
       }
 
-      h1 {
-        color: #d6336c;
-        margin-bottom: 20px;
-        font-size: 3em;
+      100% {
+        transform: scale(1) rotate(-45deg);
+      }
+    }
+
+    .message-box {
+      margin-top: 30px;
+      display: none;
+      /* Caché par défaut */
+      animation: fadeIn 2s;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    button {
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition:
+        transform 0.2s,
+        background-color 0.2s;
+      box-shadow: 0 4px 15px rgba(214, 51, 108, 0.3);
+      animation: buttonHeartbeat 2s infinite;
+    }
+
+    button:hover {
+      background-color: #a61e4d;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      /* Le Cœur en CSS pur */
-      .heart {
-        background-color: #ff4d6d;
-        display: inline-block;
-        height: 50px;
-        margin: 0 10px;
-        position: relative;
-        top: 0;
-        transform: rotate(-45deg);
-        width: 50px;
-        animation: heartbeat 1.2s infinite;
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes buttonHeartbeat {
+      0% {
+        transform: scale(1);
       }
 
-      .heart:before,
-      .heart:after {
-        content: "";
-        background-color: #ff4d6d;
-        border-radius: 50%;
-        height: 50px;
-        position: absolute;
-        width: 50px;
-      }
-
-      .heart:before {
-        top: -25px;
-        left: 0;
-      }
-
-      .heart:after {
-        left: 25px;
-        top: 0;
-      }
-
-      @keyframes heartbeat {
-        0% {
-          transform: scale(1) rotate(-45deg);
-        }
-        50% {
-          transform: scale(1.2) rotate(-45deg);
-        }
-        100% {
-          transform: scale(1) rotate(-45deg);
-        }
-      }
-
-      .message-box {
-        margin-top: 30px;
-        display: none; /* Caché par défaut */
-        animation: fadeIn 2s;
-      }
-
-      p {
-        font-size: 1.5em;
-        color: #555;
-        line-height: 1.6;
-      }
-
-      button {
-        background-color: #d6336c;
-        color: white;
-        border: none;
-        padding: 15px 30px;
-        font-size: 1.1em;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-top: 20px;
-        transition:
-          transform 0.2s,
-          background-color 0.2s;
-        box-shadow: 0 4px 15px rgba(214, 51, 108, 0.3);
-        animation: buttonHeartbeat 2s infinite;
-      }
-
-      button:hover {
-        background-color: #a61e4d;
+      50% {
         transform: scale(1.05);
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes photoAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
       }
 
-      @keyframes buttonHeartbeat {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.05);
-        }
-        100% {
-          transform: scale(1);
-        }
+      to {
+        opacity: 1;
+        transform: scale(1);
       }
+    }
 
-      @keyframes photoAppear {
-        from {
-          opacity: 0;
-          transform: scale(0.8);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
+    .photo {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      border: 4px solid white;
+      animation: photoAppear 1.5s ease-out;
+    }
 
-      .photo {
-        width: 100%;
-        max-width: 250px;
-        border-radius: 15px;
-        margin-bottom: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        border: 4px solid white;
-        animation: photoAppear 1.5s ease-out;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="heart"></div>
-      <h1>Joyeuse Saint-Valentin !</h1>
+    #lockScreen {
 
-      <!-- Bouton pour révéler le message -->
-      <button onclick="revealMessage()" id="revealBtn">
-        J'ai une surprise pour toi...
-      </button>
+      position: fixed;
+      top: 0;
+      left: 0;
 
-      <!-- Le message caché -->
-      <div class="message-box" id="loveLetter">
-        <!-- Remplace 'nous.jpg' par le nom de ta photo -->
-        <img src="nous.jpg" class="photo" alt="Nous deux" />
-        <p>
-          Mon presque-amour mystérieuse 😄,<br /><br />
+      width: 100%;
+      height: 100%;
 
-          La Saint-Valentin est passée… et apparemment même le
-          facteur t’a ghostée ce jour-là 😂.<br /><br />
+      background: linear-gradient(135deg, #ff0844, #ffb199);
 
-          Je voulais quand même t’envoyer ce petit bout d’internet, parce qu’au
-          fond… tu restes mon bug préféré : imprévisible, non documentée, et
-          impossible à supprimer de la mémoire cache 😌.<br /><br />
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-          Promis, je ne demande pas le statut GitHub de ton cœur… mais si jamais
-          ton “projet en production” crash, tu sais que je suis toujours en mode
-          maintenance 😎.<br /><br />
+      z-index: 9999;
 
-          Avec affection, Ton développeur non déclaré 💻✨
-        </p>
+    }
+
+    .lock-box {
+
+      background: rgba(255, 255, 255, 0.95);
+
+      padding: 40px;
+
+      border-radius: 20px;
+
+      text-align: center;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .lock-box input {
+
+      padding: 12px;
+
+      margin-top: 15px;
+
+      border-radius: 10px;
+
+      border: 1px solid #ccc;
+
+      font-size: 16px;
+
+    }
+
+    .lock-box button {
+
+      margin-top: 15px;
+
+    }
+
+    #error {
+
+      color: #d6336c;
+
+      margin-top: 10px;
+
+    }
+
+    .photo-row {
+      display: flex;
+      justify-content: space-between;
+      /* une à gauche, l'autre à droite */
+      align-items: center;
+      /* aligne les images sur la même ligne */
+      gap: 10px;
+      /* petit espace entre les images */
+    }
+
+    .photo-row img.photo {
+      width: 48%;
+      /* largeur identique */
+      height: 300px;
+      /* hauteur identique */
+      object-fit: cover;
+      /* remplissage du cadre sans déformation */
+      border-radius: 15px;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      animation: photoAppear 1.5s ease-out;
+    }
+  </style>
+</head>
+<!-- Écran de mot de passe romantique -->
+<div id="lockScreen">
+  <div class="lock-box">
+    <h2>Une petite question avant d'entrer ❤️</h2>
+
+    <p>
+      Quelle est la date de notre rencontre ? 💭
+    </p>
+
+    <input type="password" id="passwordInput" placeholder="ex : 14/02/2025">
+
+    <br>
+
+    <button onclick="checkPassword()">
+      Entrer
+    </button>
+
+    <p id="error"></p>
+
+  </div>
+</div>
+<script>
+
+  const correctPassword = "12/11/2025";
+  // CHANGE ICI avec votre vraie date
+
+  function checkPassword() {
+
+    const input = document.getElementById("passwordInput").value;
+
+    if (input === correctPassword) {
+
+      document.getElementById("lockScreen").style.display = "none";
+
+    }
+    else {
+
+      document.getElementById("error").innerText =
+        "Mauvaise réponse… rappelle-toi le premier jour ou on a commencer à parler au telephone ❤️";
+
+    }
+
+  }
+
+</script>
+
+<body>
+  <div class="container">
+    <div class="heart"></div>
+    <h1>Felicitation vie ça me prouve que tu m'aimes vraimment !</h1>
+
+    <!-- Bouton pour révéler le message -->
+    <button onclick="revealMessage()" id="revealBtn">
+      J'ai une surprise pour toi...
+    </button>
+
+    <!-- Le message caché -->
+    <div class="message-box" id="loveLetter">
+      <!-- Remplace 'nous.jpg' par le nom de ta photo -->
+      <div class="photo-row">
+        <img src="lui.jpg" class="photo" alt="Lui" />
+        <img src="moi.jpeg" class="photo" alt="Moi" />
       </div>
+      <p>
+        Mon amour ❤️,<br /><br />
+
+        Il y a trois mois, j’ai trouvé le courage de faire ce premier pas vers toi 👣… et sans le savoir, je faisais le
+        plus beau choix de mon cœur 💖.<br /><br />
+
+        Trois mois, ça peut sembler peu pour toi ⏳ comme tu le dis toujours qu'avec le temps on verra si je veis pas
+        changer … mais pour moi, c’est déjà tellement. Tellement de moments,
+        tellement d’émotions, tellement de toi dans ma vie 🥰. Je prie Dieu que je changer pas ni toi que ça reste tjrs
+        comme ça et j'essayerais que dans notre relation ça soit pas la Routine.Tu es devenu mon sourire quand tout va
+        mal 😊, ma paix
+        quand mon cœur est agité 🌙, et ma pensée préférée chaque jour 💭.<br /><br />
+
+        Aujourd’hui, savoir qu’on va passer un mois sans se toucher, sans te serrer contre moi, sans sentir ta chaleur
+        🤍… ça me fait mal 😔. Parce que tes bras sont devenus mon endroit préféré 🫂. Parce que ta présence me rassure
+        comme rien d’autre 🕊️.<br /><br />
+
+
+        Mais même loin, mon cœur reste avec toi 💌. La distance ne change pas ce que je ressens… elle me montre juste à
+        quel point je t’aime encore plus fort ❤️‍🔥. Tu me manques déjà, plus que les mots ne peuvent le dire…
+        😢.<br /><br />
+
+
+        Je n’ai jamais regretté ce premier pas que j’ai fait vers toi 👣💞. Et si c’était à refaire, je le referais
+        mille fois… parce qu’il m’a conduit vers toi, et toi, tu es l’une des plus belles choses qui me soient arrivées
+        ✨.<br /><br />
+
+        Je t’aime de tout mon cœur ❤️, de toute mon âme 🥹, et même dans le manque, même dans l’absence… mon amour pour
+        toi reste entier, sincère et infini ♾️💖.<br /><br />
+
+        La femme qui t’aime plus que tout 💋
+      </p>
     </div>
+  </div>
 
-    <!-- Musique cachée -->
-    <audio id="bgMusic">
-      <source src="musique.mp3" type="audio/mpeg" />
-    </audio>
+  <!-- Musique cachée -->
+  <audio id="bgMusic">
+    <source src="musique.mp3" type="audio/mpeg" />
+  </audio>
 
-    <script>
-      function revealMessage() {
-        const message = document.getElementById("loveLetter");
-        const btn = document.getElementById("revealBtn");
-        const music = document.getElementById("bgMusic");
+  <script>
+    function revealMessage() {
+      const message = document.getElementById("loveLetter");
+      const btn = document.getElementById("revealBtn");
+      const music = document.getElementById("bgMusic");
 
-        // Affiche le message
-        message.style.display = "block";
+      // Affiche le message
+      message.style.display = "block";
 
-        // Cache le bouton après le clic
-        btn.style.display = "none";
+      // Cache le bouton après le clic
+      btn.style.display = "none";
 
-        // Lance la musique (si le fichier existe)
-        music
-          .play()
-          .catch((e) =>
-            console.log("Pas de musique trouvée ou lecture bloquée"),
-          );
+      // Lance la musique (si le fichier existe)
+      music
+        .play()
+        .catch((e) =>
+          console.log("Pas de musique trouvée ou lecture bloquée"),
+        );
 
-        // Création de petits cœurs qui tombent (effet simple)
-        createHearts();
-      }
+      // Création de petits cœurs qui tombent (effet simple)
+      createHearts();
+    }
 
-      function createHearts() {
-        const body = document.querySelector("body");
-        for (let i = 0; i < 20; i++) {
-          setTimeout(() => {
-            const heart = document.createElement("div");
-            heart.innerHTML = "❤️";
-            heart.style.position = "absolute";
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.top = "-20px";
-            heart.style.fontSize = Math.random() * 20 + 20 + "px";
-            heart.style.animation = "fall 3s linear";
+    function createHearts() {
+      const body = document.querySelector("body");
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const heart = document.createElement("div");
+          heart.innerHTML = "❤️";
+          heart.style.position = "absolute";
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.top = "-20px";
+          heart.style.fontSize = Math.random() * 20 + 20 + "px";
+          heart.style.animation = "fall 3s linear";
 
-            // Ajout de l'animation de chute dynamiquement
-            const style = document.createElement("style");
-            style.innerHTML = `
+          // Ajout de l'animation de chute dynamiquement
+          const style = document.createElement("style");
+          style.innerHTML = `
                         @keyframes fall {
                             to { transform: translateY(100vh); opacity: 0; }
                         }
                     `;
-            document.head.appendChild(style);
+          document.head.appendChild(style);
 
-            body.appendChild(heart);
+          body.appendChild(heart);
 
-            // Nettoyage
-            setTimeout(() => {
-              heart.remove();
-            }, 3000);
-          }, i * 200);
-        }
+          // Nettoyage
+          setTimeout(() => {
+            heart.remove();
+          }, 3000);
+        }, i * 200);
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
